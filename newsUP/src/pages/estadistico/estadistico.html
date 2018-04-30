@@ -1,0 +1,80 @@
+<!--
+  Generated template for the EstadisticoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <div class="bar bar-header bar-energized">
+        </div>
+    </ion-navbar>
+
+    </ion-header>
+
+
+    <ion-content>
+        <ion-slides pager>
+            <ion-slide>
+                <ion-card >
+                    <ion-card-content >
+                        <canvas #barCanvas></canvas>
+                    </ion-card-content>
+                </ion-card>
+                <ion-card >
+                    <ion-card-content >
+                        <canvas #barCanvas1></canvas>
+                    </ion-card-content>
+                </ion-card>
+                <ion-card >
+                    <ion-card-content >
+                        <canvas #barCanvas2></canvas>
+                    </ion-card-content>
+                </ion-card>
+           </ion-slide>
+           <ion-slide>
+                <ion-card>
+                    <ion-card-content>
+                        <ion-title>
+                                Productos más vendido.</ion-title>
+                        <ion-list >
+                            <ion-item >
+                                <ion-label>Año</ion-label>
+                                <ion-select  [(ngModel)]="filtroAno">
+                                    <ion-option *ngFor="let anos of anios" value="{{anos.ano}}">
+                                        {{anos.ano}}
+                                    </ion-option>  
+                                </ion-select>
+                            </ion-item>
+                        </ion-list> 
+                        <ion-list >
+                            <ion-item >
+                                <ion-label>Mes</ion-label>
+                                <ion-select  [(ngModel)]="filtroMes">
+                                        <ion-option value="01">Enero</ion-option>
+                                        <ion-option value="02">Febrero</ion-option>
+                                        <ion-option value="03">Marzo</ion-option>
+                                        <ion-option value="04">Abril</ion-option>
+                                        <ion-option value="05">Mayo</ion-option>
+                                        <ion-option value="06">Junio</ion-option>
+                                        <ion-option value="07">Julio</ion-option>
+                                        <ion-option value="08">Agosto</ion-option>
+                                        <ion-option value="09">Septiembre</ion-option>
+                                        <ion-option value="10">Octubre</ion-option>
+                                        <ion-option value="11">Noviembre</ion-option>
+                                        <ion-option value="12">Diciembre</ion-option>
+                                </ion-select>
+                            </ion-item>
+                        </ion-list> &nbsp;
+                        <button ion-button (click)="btnAceptar()" style="text-align: right;" color="secondary">Aceptar</button>
+                    </ion-card-content>
+                </ion-card>
+                <ion-card >
+                        <ion-card-content>
+                          <canvas #doughnutChart></canvas>
+                        </ion-card-content>
+                </ion-card>
+            </ion-slide>
+        </ion-slides>
+    </ion-content>
